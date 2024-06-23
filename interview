@@ -1,4 +1,9 @@
 Kubernetes is an open source container orchestration engine for automating deployment, scaling, and management of containerized applications.
+
+Kubernetes – Cluster Architecture
+Kubernetes comes with a client-server architecture. It consists of master and worker nodes, with the master being installed on a single Linux system and the nodes on many Linux workstations. The master node, contains the components such as API Server, controller manager, scheduler, and etcd database for stage storage. kubelet to communicate with the master, the kube-proxy for networking, and a container runtime such as Docker to manage containers.
+
+
 Q5. What is Container Orchestration?
 Consider a scenario where you have 5-6 microservices for an application. Now, these microservices are put in individual containers, but won’t be able to communicate without container orchestration. So, as orchestration means the amalgamation of all instruments playing together in harmony in music, similarly container orchestration means all the services in individual containers working together to fulfill the needs of a single server.
 Pods are the smallest deployable units of computing that you can create and manage in Kubernetes.A Pod (as in a pod of whales or pea pod) is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers.
