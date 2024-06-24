@@ -27,3 +27,28 @@ spec:
         - containerPort: 80
 The Deployment creates a ReplicaSet that creates three replicated Pods, indicated by the .spec.replicas field.
 
+DEPLOYMENT : releasing and upgrading software so that people can use it.
+RECREATE STRATEGY : the existing instances of the application are terminated all at once and then the new instances are created with updated configuration. 
+adv : ensures all the pods are running with same version, simple and straight forward.
+dis : down timely
+
+ROLLING UPDATE (DEFAULT): new instances are gradually created  while the old are gradually deleted ensuring smooth transition without zero downtime.
+adv: zero downtime , easy to rollback if ther are any issues.
+dis : longer deployment time compared to recreate.
+
+BLUE GREEN DEPLOYMENT: running two identical environments(Blue & green) with only one active at any time, the inactive environments can be updated without affecting the users, and then traffic will be switched to updated env.
+adv :easy rollback by switching traffic back to the previous environments, zero downtime.
+dis :requires double resources to maintain the identical environments
+
+Canary deployment : involves rolling out updates to  small subset of users or servers before rolling it out to the larger group, allowing for testing in real-world scenario before full deployment
+adv: quick detection of issue before affecting all users, risk mitigating by testing with small subset of users
+dis : Requires carefull monitoring and management of traffic routing
+
+A/B DEPLOYMENT : deploying multiple versions of app simultaneously and directing different users or request to each version to compare the performance or features,
+adv: allows for comparison of different versions, enables data driven decision making based on user behaviour
+dis :complexity on managing multiple versions simultaneously  
+
+kubelet manages the containers that are scheduled  to run on the node, it ensures that the containers are running and healthy. kubelet communicates with api server to get the information about the conatiner that should be running on the node.and then start and stop the container as needed to maintain the desired state, it also monitors the containers to ensure they are running correctly and restart them if necessary.
+we monitor the k8s cluster and f
+
+
